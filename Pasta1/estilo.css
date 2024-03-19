@@ -1,0 +1,42 @@
+:root{
+--verde:#00FF00;
+--preto:#5f5f5f;
+--branco:#FFFFFF;
+--laranjaescuro:#FF8C00;
+--laranjaclaro:#FFFF00;
+}
+
+
+img {width: 720px;}
+h1 {font-family: Arial, Helvetica, sans-serif;}
+
+
+body {
+    background-color: var(--bg);
+    color: var(--fonte);
+}
+
+div {
+    background-color: var(--bgdiv);
+}
+
+button{
+    background-color: var(--bgbtn);
+    color: var(--ftbtn);
+}
+
+
+.temaclaro {
+    --bg: var(--branco);
+    --fonte: var(--preto);
+    --bgbtn: var(--branco);
+    --ftbtn: var(--preto);
+    --bgdiv: var(--laranjaclaro)
+}
+.temaescuro {
+    --bg: var(--preto);
+    --fonte: var(--branco);
+    --bgbtn: var(--preto);
+    --ftbtn: var(--branco);
+    --bgdiv: var(--laranjaescuro)
+}
