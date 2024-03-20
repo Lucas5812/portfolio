@@ -1,0 +1,42 @@
+<!--
+Alunos: Lucas Leandro
+3ºE II
+ -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estilo.css ">
+</head>
+<body>
+    <div class="fundocinza">
+    <h1>Bem-vindo(a) a calculadora</h1>
+    <H2>Adicione os valores 1 e 2 abaixo.</H2>
+    <input id="v1" type="text"><br>
+    <input id="v2" type="text"><br>
+    <div>
+        <button type="button" onclick="add(1)">1</button>
+        <button type="button" onclick="add(2)">2</button>
+        <button type="button" onclick="add(3)">3</button>
+        <button type="button" onclick="add(4)">4</button>
+        <button type="button" onclick="add(5)">5</button>
+        <br>
+        <button type="button" onclick="add(6)">6</button>
+        <button type="button" onclick="add(7)">7</button>
+        <button type="button" onclick="add(8)">8</button>
+        <button type="button" onclick="add(9)">9</button>
+        <button type="button" onclick="add(0)">0</button>
+    </div>
+    <H1 id="res">Resposta:  </H1>
+    <button type="button" onclick="somar()">somar</button>
+    <button type="button" onclick="subtrair()">subtrair</button><br>
+    <button type="button" onclick="dividir()">dividir</button>
+    <button type="button" onclick="multiplicar()">multiplicar</button>
+    </div>
+
+    
+    <script src="funcoes.js"></script>
+</body>
+</html>
