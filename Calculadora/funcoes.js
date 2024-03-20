@@ -25,7 +25,7 @@ function multiplicar() {
 }
 
 /*Bloco de adição de numeros */
-var ultvselecionado = "v1"
+var ultvselecionado = "r1"
 function add(numero){
     var r1 = document.getElementById("v1").value;
     var r2 = document.getElementById("v2").value;
