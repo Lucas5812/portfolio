@@ -1,0 +1,44 @@
+<html>
+    <head>
+    <title>Garagem encontra você!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="estilo.css">
+
+    </head>
+
+    <body>
+    <!-- Inicio do formulario -->
+    <div class="fundovermelho"><H1>Garagem Pinturas</H1></div>
+    <p class="fundocinza">Você, caro cliente está querendo embelezar alguma casa da sua rua? Seu bairro? Sua cidade ou qualquer país no mundo? Com nossos serviços de pintura Garagem você pode!
+    <br>
+     Nossa equipe especializada irá garantir que a pintura seja silenciosa, livre de testemunhas e completamente desconexa a sua pessoa!
+    <br>
+    As cores suportadas para limpeza são:<br>
+    Vermelho.
+    </p>
+    <div class="fundovermelho"><h2>Insira o CEP da casa abaixo</h2></div>
+      <form method="get" action=".">
+        <label style="text-align: left;">Cep:
+        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+               onblur="pesquisacep(this.value);" /></label><br />
+        <label>Rua:
+        <input name="rua" type="text" id="rua" size="60" /></label><br />
+        <label>Bairro:
+        <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+        <label>Cidade:
+        <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+        <label>Estado:
+        <input name="uf" type="text" id="uf" size="2" /></label><br />
+        <label>IBGE:
+        <input name="ibge" type="text" id="ibge" size="8" /></label><br />
+      </form>
+      <!-- Adicionando Javascript -->
+    <script src="funcoes.js"></script>
+    </body>
+    <footer>
+        <div class="fundovermelho">
+        <p>Alunos: Lucas Leandro, Lucas Manoel, Maria Lays, Mariana e Marco; 3ºE II</p>
+    </div>
+    </footer>
+    </html>
+    
