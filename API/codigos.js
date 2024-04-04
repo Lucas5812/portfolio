@@ -4,7 +4,7 @@ function pegacuriosidade(fato) {
 
 const pesquisarcuriosidade = async () => {
     const numero = document.getElementById("numero").value;
-    const url = 'http://numbersapi.com/' + numero + '/math?json';
+    const url = 'http://numbersapi.com/' + numero + '?json';
 
     try {
         const resposta = await fetch(url);
