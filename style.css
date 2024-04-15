@@ -1,0 +1,156 @@
+/*
+
+@Programith
+
+*/
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden; 
+}
+
+/*
+Aqui, o estilo está sendo aplicado ao elemento `body`, definindo algumas propriedades de layout e aparência.
+    margin: 0; define a margem do corpo como 0, eliminando qualquer espaço em branco ao redor.
+    height: 100vh; define a altura do corpo como 100% da altura da viewport.
+    display: flex; define o layout do corpo como flexível.
+    align-items: center; alinha os itens flexíveis verticalmente ao centro.
+    justify-content: center; alinha os itens flexíveis horizontalmente ao centro.
+    background-color: black; define o fundo do corpo como preto.
+    overflow: hidden; oculta qualquer conteúdo que se estenda além dos limites do corpo.
+*/
+
+.container {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+
+/*
+    Este estilo é aplicado à classe `.container`.
+    font-size: 10px; define o tamanho da fonte dentro do contêiner como 10 pixels.
+    width: 40em; define a largura do contêiner como 40 vezes o tamanho da fonte atual.
+    height: 40em; define a altura do contêiner como 40 vezes o tamanho da fonte atual.
+    position: relative; define a posição do contêiner como relativa em relação ao seu próprio fluxo normal.
+*/
+
+.sun {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em; /*rkg*/
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+}
+
+/*
+  Estes estilos são aplicados à classe `.sun`, que representa o sol.
+    position: absolute; define a posição do sol como absoluta em relação ao seu contêiner pai.
+    top: 15em; posiciona o sol 15 vezes o tamanho da fonte a partir do topo do seu contêiner pai.
+    left: 15em; posiciona o sol 15 vezes o tamanho da fonte a partir da esquerda do seu contêiner pai.
+    width: 10em; define a largura do sol como 10 vezes o tamanho da fonte atual.
+    height: 10em; define a altura do sol como 10 vezes o tamanho da fonte atual.
+    background-color: yellow; define a cor de fundo do sol como amarelo.
+    border-radius: 50%; arredonda as bordas do sol para criar uma forma circular.
+    box-shadow: 0 0 3em white; adiciona uma sombra ao redor do sol para criar um efeito de brilho.
+*/
+
+.earth,
+.moon {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+
+/*
+  Estes estilos são aplicados às classes `.earth` e `.moon`, que representam a Terra e a Lua, respectivamente.
+    position: absolute; define a posição da Terra e da Lua como absoluta em relação ao seu contêiner pai.
+    border-style: solid; define o estilo da borda como sólido.
+    border-color: white transparent transparent transparent; define a cor da borda como branca e transparente para criar um efeito de meia-lua.
+    border-width: 0.1em 0.1em 0 0; define a largura da borda para formar uma meia-lua.
+    border-radius: 50%; arredonda as bordas para criar uma forma circular.
+*/
+
+.earth {
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 36.5s linear infinite;
+}
+
+/*
+  Estes estilos são aplicados especificamente à classe `.earth`, que representa a Terra.
+    top: 5em; posiciona a Terra 5 vezes o tamanho da fonte a partir do topo do seu contêiner pai.
+    left: 5em; posiciona a Terra 5 vezes o tamanho da fonte a partir da esquerda do seu contêiner pai.
+    width: 30em; define a largura da Terra como 30 vezes o tamanho da fonte atual.
+    height: 30em; define a altura da Terra como 30 vezes o tamanho da fonte atual.
+    animation: orbit 36.5s linear infinite; aplica uma animação chamada "orbit" à Terra, com uma duração de 36.5 segundos, movimento linear e repetição infinita.
+*/
+
+.moon {
+    top: 0;
+    right: 0;
+    width: 8em;
+    height: 8em;
+    animation: orbit 2.7s linear infinite;
+}
+
+/*
+  Estes estilos são aplicados especificamente à classe `.moon`, que representa a Lua.
+    top: 0; posiciona a Lua no topo do seu contêiner pai.
+    right: 0; posiciona a Lua na extremidade direita do seu contêiner pai.
+    width: 8em; define a largura da Lua como 8 vezes o tamanho da fonte atual.
+    height: 8em; define a altura da Lua como 8 vezes o tamanho da fonte atual.
+    animation: orbit 2.7s linear infinite; aplica uma animação chamada "orbit" à Lua, com uma duração de 2.7 segundos, movimento linear e repetição infinita.
+*/
+
+.earth::before,
+.moon::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+/*
+  Estes estilos são aplicados aos pseudo-elementos '::before' das classes `.earth` e `.moon`, para adicionar elementos visuais 
+  adicionais antes do conteúdo real desses elementos.
+    content: ""; define o conteúdo do pseudo-elemento como vazio.
+    position: absolute; define a posição do pseudo-elemento como absoluta em relação ao seu contêiner pai.
+    border-radius: 50%; arredonda as bordas do pseudo-elemento para criar uma forma circular.
+*/
+
+.earth::before {
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background-color: aqua;
+}
+
+.moon::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: silver;
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*  transform: rotate(360deg); faz com que os elementos aos quais é aplicada girem 360 graus, completando uma órbita completa*/
+
