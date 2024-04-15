@@ -3,11 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baguncinhas</title>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Cadastro</title>
 </head> 
 <body>
-    <input type="number" id="CPF" placeholder="adicione um CPF" onblur="VerificaCPF()">
-    <p id="veredicto"></p>
+    <header>
+        <table class="table1">
+            <tr>
+                <td class="logo"><img src="https://lh4.googleusercontent.com/Or3kfWfwpuBtsdSCN_Wdpw32pmJLbc2OgPnDIM3DhuOJm5mfYK_WxwkfALNp--BSUtUZhj6p-mGNl0dP4Q0i_6k=w16383" alt="Garagem Logo" width="30px"></td>
+                <td>Garagem</td>
+            </table>
+                <table class="table2">
+                <td class="pi"><a href="https://sites.google.com/view/garagemdoperigo/página-inicial" target="next">Página inicial</a>
+                <a href="faleconoscoGaragem.html" rel="next">Fale conosco</a>
+                </td>
+            </tr>
+        </table>
+        <h1><u>Cadastro Garagem</u></h1> 
+    </header>
+        <p class="p1">Olá você que quer ser cliente dos nossos serviços inéditos e que você não encontra em nenhum lugar do planeta! <br> Preencha adequadamente os campos abaixo para receber e ficar por dentro das atualizações dos nossos produtos!
+        </p>
+        <form>
+            <table>
+                <td>
+                    <input type="number" id="CPF" placeholder="Adicione um CPF" onblur="VerificaCPF()">
+                </td>
+                    <td>
+                    <div class="div1">
+                        <input name="cep" type="text" id="cep" value="" size="0" placeholder="Digite o seu CEP" maxlength="9" onblur="pesquisacep(this.value);"><br>
+                        <input name="rua" type="text" id="rua" size="0" placeholder="Rua"><br />
+                        <input name="bairro" type="text" id="bairro" placeholder="Bairro" size="0"><br />
+                    </div>
+                    <button type="button" onclick="verificaCampos()">Enviar</button>
+                    </td>
+                    <td>
+                    <div class="div2">
+                        <input name="cidade" type="text" id="cidade" placeholder="Cidade" size="0"><br/>
+                        <input name="uf" type="text" id="uf" size="0" placeholder="UF"><br/>
+                        <input name="ibge" type="text" id="ibge" placeholder="ibge" size="0"><br/>
+                    </div>
+                    </td>
+                    <tr>
+                        <p id="veredicto"></p>
+                        <p id="cepfailed"></p>
+                    </tr>
+            </table>
+        </form>
+        <p id="oculto" style="display: none;">Ótimo! Agora você se tornou um garagem cliente. Obrigado por se cadastrar em nossos serviços! <br> Tem alguma dúvida sobre nosso atendimento? Clique vá em nossa página "Fale Conosco" e tire (quase) qualquer dúvida lá!
+        </p>
+        
+        <footer>
+            Alunos: Lucas Leandro, Ronaldo, Arthur Luís, Mariana, João Paulo, Maria Lays, Felipe, Lucas Manoel, José Marcus, Marco. <br>
+            Série: 3° I.I
+        </footer>
     <script src="codigos.js"></script>
 </body>
 </html>
