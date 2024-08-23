@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garagem-concurso</title>
+    <link rel="stylesheet" href="estiloconcurso.css">
+</head>
+<body>
+    <script src="apiCEP.js"></script>
+    <header>
+    <table class="table1">
+
+        <tr>
+            <td class="logo"><img src="https://lh4.googleusercontent.com/Or3kfWfwpuBtsdSCN_Wdpw32pmJLbc2OgPnDIM3DhuOJm5mfYK_WxwkfALNp--BSUtUZhj6p-mGNl0dP4Q0i_6k=w16383" alt="Garagem Logo" width="30px"></td>
+            <td>Garagem</td>
+        </table>
+            <table class="table2">
+            <td class="pi"><a href="https://sites.google.com/view/garagemdoperigo/página-inicial" target="next">Página inicial</a>
+            <a href="faleconoscoGaragem.html" rel="next">Fale conosco</a>
+            </td>
+        </tr>
+    </table>
+    <h1><u>Concurso Garagem</u></h1> 
+</header>
+    <p class="p1">Opa! Parece que você está a procura de um emprego não é mesmo? Aqui na garagem, estamos abrindo vagas para mais menores-aprendizes (o nosso ultimamente só fica no tiktok em toda carga horária, mas o chefe se recusa a demitir ele). <br> 
+    Para participar desse concurso, preencha todos os campos abaixo:
+    </p> 
+    <table class="table3">
+        <form action="dadosconcurso.php" method="post" action=".">
+        <td>
+            <label for="email">Email:</label> <br>
+            <input type="text" name="email"> <br>
+            <label for="nc">Nome Completo:</label> <br>
+            <input type="text" name="nc"> <br>
+            <label for="dn">Data de Nascimento:</label> <br>
+            <input type="text" name="dn"> <br>
+            <label for="sexo">Sexo:</label> <br>
+            <input type="text" name="sexo"> <br>
+        </td>
+        <td>
+            <label for="ecl">Estado Civil</label> <br>
+            <input type="text" name="ecl"> <br>
+            <label for="nacionalidade">Nacionalidade:</label> <br>
+            <input type="text" name="nacionalidade"> <br>
+            <label for="rg">RG:</label> <br>
+            <input type="text" name="rg"> <br>
+            <label for="cpf">CPF:</label> <br>
+            <input type="text" name="cpf"> <br>
+
+        </td>
+        <td>
+            <label for="log">Logradouro:</label> <br>
+            <input type="text" name="log" id="log"> <br>
+            <label for="num">Número:</label> <br>
+            <input type="text" name="num"> <br>
+            <label for="comp">Complemento:</label> <br>
+            <input type="text" name="comp"> <br>
+            <label for="bairro">Bairro:</label> <br>
+            <input type="text" name="bairro" id="bairro">
+            
+        </td>
+        <td>
+            <label for="cidade">Cidade:</label> <br>
+            <input type="text" name="cidade" id="cidade"> <br>
+            <label for="estado">Estado:</label> <br>
+            <input type="text" name="estado" id="estado"> <br>
+            <label for="cep">CEP:</label> <br>
+            <input type="text" name="cep" id="cep" maxlength="9" value="" onblur="pesquisacep(this.value);"> <br>
+            <label for="tc">Telefone:</label> <br>
+            <input type="text" name="telefone">
+        </td>
+        
+    </table>
+    <input type="submit" class="botao" value="Enviar" width="5" style="cursor: pointer;">
+    </form> 
+</body>
+</html>
