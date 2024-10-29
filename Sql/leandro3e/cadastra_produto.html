@@ -9,19 +9,28 @@
 <body>
     <h1>Cadastrador de produtos da Garagem</h1>
     <p>Liste aqui, as informações requisitadas para o cadastro de um novo produto para o nosso catálogo</p>
-    <table>
-        <td>
+
+    <table style="margin: auto; border: 1px solid white;">
+        <tr>
+        <td style="width: 50px;">
             <label for="Nome">Nome do produto</label><br>
             <input type="text" name="Nome"><br>
             <label for="preco">valor do produto</label><br>
             <input type="text" name="preco"><br>
-        </td>
-        <td>
+        </td><td style="width: 50px;">
             <label for="Quantidade">Quantidade estocada</label><br>
             <input type="text" name="Qnt"><br>
-            <label for="Origem">Local de origem</label>
-            <input type="checkbox" name="" id="">
-        </td>
+            <label for="Origem">Local de origem</label><br>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">Armazém</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">Cozinha</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">Van do fornecedor</label>
+        </td></tr>
     </table>
+    <div style="align-items: center;">
+        <input type="submit" value="Enviar" style="width: 100px;">
+    </div>
 </body>
 </html>
