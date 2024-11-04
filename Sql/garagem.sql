@@ -78,6 +78,10 @@ CREATE TABLE `origens` (
   `Nome` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+INSERT INTO `origens` (`Id_origem`, `Nome`) VALUES
+(1, 'Armazém'),
+(2, 'Cozinha'),
+(3, 'Van do Fornecedor');
 -- --------------------------------------------------------
 
 --
