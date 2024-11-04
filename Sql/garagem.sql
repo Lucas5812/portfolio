@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `clientes` (
-  `Id_cliente` int(11) NOT NULL,
+  `Id_cliente` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(255) NOT NULL,
   `Data_nascimento` date NOT NULL,
   `Cep` varchar(10) NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE `clientes` (
 --
 
 CREATE TABLE `compras` (
-  `Id_compra` int(11) NOT NULL,
+  `Id_compra` int(11) NOT NULL AUTO_INCREMENT,
   `Id_cliente` int(11) NOT NULL,
   `Id_produto` int(11) NOT NULL,
   `Qnt_comprada` int(11) NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE `compras` (
 --
 
 CREATE TABLE `funcionarios` (
-  `Id_funcionario` int(11) NOT NULL,
+  `Id_funcionario` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(255) NOT NULL,
   `Marcacao_alma` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -74,7 +74,7 @@ CREATE TABLE `funcionarios` (
 --
 
 CREATE TABLE `origens` (
-  `Id_origem` int(11) NOT NULL,
+  `Id_origem` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -85,7 +85,7 @@ CREATE TABLE `origens` (
 --
 
 CREATE TABLE `produtos` (
-  `Id_produto` int(11) NOT NULL,
+  `Id_produto` int(11) NOT NULL AUTO_INCREMENT,
   `Id_origem` int(11) NOT NULL,
   `Nome` varchar(255) NOT NULL,
   `Quantidade` int(11) NOT NULL,
