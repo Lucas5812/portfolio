@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Out-2024 às 22:07
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 07/11/2024 às 04:27
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,11 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `clientes`
+-- Estrutura para tabela `clientes`
 --
 
 CREATE TABLE `clientes` (
-  `Id_cliente` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_cliente` int(11) NOT NULL,
   `Nome` varchar(255) NOT NULL,
   `Data_nascimento` date NOT NULL,
   `Cep` varchar(10) NOT NULL,
@@ -37,18 +37,18 @@ CREATE TABLE `clientes` (
   `E_mail` varchar(255) NOT NULL,
   `Telefone` varchar(14) NOT NULL,
   `Horario_vazio` time NOT NULL,
-  `Num_cartao` int(11) DEFAULT NULL,
+  `Num_cartao` bigint(11) DEFAULT NULL,
   `Senha_cartao` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `compras`
+-- Estrutura para tabela `compras`
 --
 
 CREATE TABLE `compras` (
-  `Id_compra` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_compra` int(11) NOT NULL,
   `Id_cliente` int(11) NOT NULL,
   `Id_produto` int(11) NOT NULL,
   `Qnt_comprada` int(11) NOT NULL,
@@ -58,11 +58,11 @@ CREATE TABLE `compras` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `funcionarios`
+-- Estrutura para tabela `funcionarios`
 --
 
 CREATE TABLE `funcionarios` (
-  `Id_funcionario` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_funcionario` int(11) NOT NULL,
   `Nome` varchar(255) NOT NULL,
   `Marcacao_alma` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -70,44 +70,61 @@ CREATE TABLE `funcionarios` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `origens`
+-- Estrutura para tabela `origens`
 --
 
 CREATE TABLE `origens` (
-  `Id_origem` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_origem` int(11) NOT NULL,
   `Nome` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `origens`
+--
 
 INSERT INTO `origens` (`Id_origem`, `Nome`) VALUES
 (1, 'Armazém'),
 (2, 'Cozinha'),
 (3, 'Van do Fornecedor');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produtos`
+-- Estrutura para tabela `produtos`
 --
 
 CREATE TABLE `produtos` (
-  `Id_produto` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_produto` int(11) NOT NULL,
   `Id_origem` int(11) NOT NULL,
   `Nome` varchar(255) NOT NULL,
   `Quantidade` int(11) NOT NULL,
-  `Preco` float NOT NULL
+  `Preco` double(65,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `produtos`
+--
+
+INSERT INTO `produtos` (`Id_produto`, `Id_origem`, `Nome`, `Quantidade`, `Preco`) VALUES
+(1, 2, 'Batata bem passada', 5, 8.00),
+(2, 3, 'Coração do Davy Jones', 1, 400.00),
+(3, 3, 'Holandes Voador', 1, 4003.00),
+(4, 2, 'Mystery bottle', 3, 57.84),
+(5, 1, 'Canivete 31 funções', 10, 375.00),
+(6, 1, 'Abridor de latas', 20, 13.50);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `clientes`
+-- Índices de tabela `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`Id_cliente`);
 
 --
--- Índices para tabela `compras`
+-- Índices de tabela `compras`
 --
 ALTER TABLE `compras`
   ADD PRIMARY KEY (`Id_compra`),
@@ -115,26 +132,26 @@ ALTER TABLE `compras`
   ADD KEY `Id_produto` (`Id_produto`);
 
 --
--- Índices para tabela `funcionarios`
+-- Índices de tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
   ADD PRIMARY KEY (`Id_funcionario`);
 
 --
--- Índices para tabela `origens`
+-- Índices de tabela `origens`
 --
 ALTER TABLE `origens`
   ADD PRIMARY KEY (`Id_origem`);
 
 --
--- Índices para tabela `produtos`
+-- Índices de tabela `produtos`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`Id_produto`),
   ADD KEY `Id_origem` (`Id_origem`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -144,24 +161,42 @@ ALTER TABLE `clientes`
   MODIFY `Id_cliente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `compras`
+--
+ALTER TABLE `compras`
+  MODIFY `Id_compra` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
   MODIFY `Id_funcionario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restrições para despejos de tabelas
+-- AUTO_INCREMENT de tabela `origens`
+--
+ALTER TABLE `origens`
+  MODIFY `Id_origem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `produtos`
+--
+ALTER TABLE `produtos`
+  MODIFY `Id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `compras`
+-- Restrições para tabelas `compras`
 --
 ALTER TABLE `compras`
   ADD CONSTRAINT `compras_ibfk_1` FOREIGN KEY (`Id_cliente`) REFERENCES `clientes` (`Id_cliente`),
   ADD CONSTRAINT `compras_ibfk_2` FOREIGN KEY (`Id_produto`) REFERENCES `produtos` (`Id_produto`);
 
 --
--- Limitadores para a tabela `produtos`
+-- Restrições para tabelas `produtos`
 --
 ALTER TABLE `produtos`
   ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`Id_origem`) REFERENCES `origens` (`Id_origem`);
