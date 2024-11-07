@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrador de clientes</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Cadastrador de Clientes Garagem</h1>
+    <p class="destaque">Algum cliente gostaria de se cadastras na garagem? ótimo! Basta coletar os seguintes dados:</p>
+    <div style="text-align: center;">
+        <form action="cadastra_cliente.php" method="post">
+
+            <label for="Nome">Nome</label>
+            <input type="text" name="Nome">
+
+            <label for="CPF">CPF</label>
+            <input type="number" name="CPF">
+
+            <br><br>
+
+            <label for="RG">RG</label>
+            <input type="number" name="RG">
+
+            <label for="Email">E-mail</label>
+            <input type="text" name="Email">
+
+            <br><br>
+
+            <label for="Tel">Telefone</label>
+            <input type="number" name="Tel">
+
+            <label for="Data_nasc">Data de nascimento</label>
+            <input type="date" name="Data_nasc">
+
+            <br><br>
+
+            <label for="Num_cart">Numero do cartão</label>
+            <input type="number" name="Num_cart">
+
+            <label for="Senha_cart">Senha do cartão</label>
+            <input type="password" name="Senha_cart">
+
+            <br><br>
+
+            <label for="Hora_vazio">Horário que não tem nimguem em casa</label>
+            <input type="time" name="Hora_vazio">
+
+        </form>
+        <br><br>
+
+        <a href="index.html"><button>Retornar</button></a>
+    </div>
+</body>
+</html>

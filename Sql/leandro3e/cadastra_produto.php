@@ -6,24 +6,24 @@ if(!$conn){
 }
 
 
-$Nome = "$post[nome]";
+$Nome = "$_POST[Nome]";
 
-$Preco = "$post[preco]";
+$Preco = "$_POST[Preco]";
 
-$Qnt = "$post[Qnt]";
+$Qnt = "$_POST[Qnt]";
 
-$Origem = "$post[Origem]";
+$Origem = "$_POST[Origem]";
 
 
-if($Origem = "Armazem"){
+if($Origem == "Armazem"){
     $Origem = 1;
-},
-elseif($Origem = "Cozinha"){
+}
+elseif($Origem == "Cozinha"){
     $Origem = 2;
-},
-elseif($Origem = "Van"){
+}
+elseif($Origem == "Van"){
     $Origem = 3;
-},
+}
 
 
 
@@ -34,9 +34,9 @@ VALUES
 
 
 
-$query = mysqli_query(mysql: $conn,query; $sql) or die(mysqli_error(mysql: $conn)); 
+$query = mysqli_query(mysql: $conn,query: $sql) or die(mysqli_error(mysql: $conn)); 
 
 if($query){
-    echo "<center>"
-    echo "Cadastro realizado com sucesso"
+    echo "<center>";
+    echo "Cadastro realizado com sucesso";
 }
